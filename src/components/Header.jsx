@@ -38,6 +38,8 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-10 flex flex-row items-center justify-between h-14 px-4 md:px-5 bg-white dark:bg-black">
       {loading && <Loader />}
+
+      {/* LEFT SECTION */}
       <div className="flex h-5 items-center">
         {pageName !== "video" && (
           <div
@@ -60,6 +62,8 @@ const Header = () => {
           <img className="h-full md:hidden" src={ytLogoMobile} alt="Youtube" />
         </Link>
       </div>
+
+      {/* CENTER SECTION */}
         <div className="group flex items-center">
           <div className="flex h-8 md:h-10 md:ml-10 md:pl-5 border border-[#303030] rounded-l-3xl group-focus-within:border-blue-500 md:group-focus-within:ml-5 md:group-focus-within:pl-0">
             <div className="w-10 items-center justify-center hidden group-focus-within:md:flex">
@@ -74,10 +78,13 @@ const Header = () => {
             />
           </div>
           <button 
-              className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]">
+              className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]"
+              onClick={() => searchQueryHandler("searchButton")}>
             <IoIosSearch className="text-white text-xl" />
           </button>
         </div>
+
+        {/* RIGHT SECTION */}
         <div className="flex items-center">
           <div className="hidden md:flex">
             <div className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
@@ -87,10 +94,11 @@ const Header = () => {
               <FiBell  className="text-white text-xl cursor-pointer" />
             </div>
             <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-              <img src="https://xsgames.co/randomusers/assets/avatars/male/59.jpg" alt="" />
+              <img src="https://api.multiavatar.com/kathrin.svg" alt="" />
             </div>
           </div>
         </div>
+
     </div>
   );
 };
